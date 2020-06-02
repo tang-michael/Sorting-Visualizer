@@ -19,12 +19,12 @@ public class BubbleSort {
 		for(int i = 0; i < n-1; i++) {
 			for(int j = 0; j < n-i-1; j++) {
 				if(arr[j] > arr[j+1]) {
-					int temp = arr[j];				// Simple array swap
+					int temp = arr[j];				
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
 
 					try {
-						Thread.sleep(100);				// Sleeps so update isn't "instant"
+						Thread.sleep(100);				
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
