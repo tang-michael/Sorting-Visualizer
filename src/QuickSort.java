@@ -30,22 +30,19 @@ public class QuickSort {
 	}
 
 	private int partition(int start, int end) {
-		int pivot = arr[start]; // Selects the first number as the pivot (it can be anything)
+		int pivot = arr[start]; 
+		while (start < end) { 
 
-		while (start < end) { // We don't want overlap
-
-			while (arr[start] < pivot) // Moves the left pointer to a point where the number not suppose to be on that
-										// side, ie bigger than the pivot
+			while (arr[start] < pivot)
 				start++;
 
-			while (arr[end] > pivot) // Moves the right pointer to a point where the number not suppose to be on that
-										// side, ie smaller than the pivot
+			while (arr[end] > pivot) 
 				end--;
 
-			if (arr[start] == arr[end]) // Do nothing if they are the same
+			if (arr[start] == arr[end]) 
 				end--;
 
-			else if (start < end) // Swap the values at the pointers
+			else if (start < end) 
 				swapValues(start, end);
 
 		}
@@ -55,16 +52,16 @@ public class QuickSort {
 	}
 
 	public void swapValues(int a, int b) {
-		int temp = arr[a];				// Simple array swap
+		int temp = arr[a];				
 		arr[a] = arr[b];
 		arr[b] = temp;
 
 		try {
-			Thread.sleep(100);				// Sleeps so update isn't "instant"
+			Thread.sleep(100);				
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		update.update(arr);				// Ultimately Prints 
+		update.update(arr);				
 	}
 
 	public interface ArrayUpdater {
